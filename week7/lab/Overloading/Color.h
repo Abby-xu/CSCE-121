@@ -1,0 +1,48 @@
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//                      OVERLOADING OPERATOR '+=' LAB                       //
+//                                 Color.h                                  //
+//                                                                          //
+// Written By : Rong Xu                 Environment : Mac OS X 10.10.5      //
+// Date ......: 2020/07/01              Compiler ...: Homebrew GCC 6.3.0_1  //
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+#ifndef COLOR_H
+#define COLOR_H
+
+//////////////////////////////////////////////////////////////////////////////
+//                                 Dependencies                             //
+//////////////////////////////////////////////////////////////////////////////
+#include <iostream>
+#include <sstream>
+
+//////////////////////////////////////////////////////////////////////////////
+//                           Color Class Definition                         //
+//////////////////////////////////////////////////////////////////////////////
+class Color_error {};
+class Color {
+/* Public */
+public:
+    Color();
+    Color(int r, int g, int b);
+    std::string to_str() const;
+    bool is_valid_val(int) const;
+    int get_R(void) const { return R; }
+    int get_G(void) const { return G; }
+    int get_B(void) const { return B; }
+    void set_R(int);
+    void set_G(int);
+    void set_B(int);
+    //add the member function as instruction
+    Color& operator+=(const Color& rhs);
+
+
+    /* Private */
+private:
+    int R;
+    int G;
+    int B;
+};
+
+//////////////////////////////////////////////////////////////////////////////
+#endif
